@@ -1,4 +1,4 @@
-﻿﻿cmake_minimum_required(VERSION 3.28)
+﻿cmake_minimum_required(VERSION 3.28)
 project(raiders LANGUAGES CXX)
 
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
@@ -45,7 +45,7 @@ target_include_directories(raiders PUBLIC
     $<INSTALL_INTERFACE:include>
 )
 
-target_compile_features(raiders PRIVATE cxx_std_14)
+target_compile_features(raiders PRIVATE cxx_std_20)
 
 target_link_libraries(raiders PRIVATE SFML::Graphics SFML::Window SFML::System SFML::Audio SFML::Network)
 
