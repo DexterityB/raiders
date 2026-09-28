@@ -1,10 +1,15 @@
 #include <SFML/Window.hpp>
+#include <SFML/Graphics.hpp>
 
 int main()
 {
-	sf::Window window(sf::VideoMode({ 800, 600 }), "My window");
-	/*sf::CircleShape shape(100.f);
-	shape.setFillColor(sf::Color::Green);*/
+	sf::RenderWindow window(sf::VideoMode({ 800, 600 }), "My window");
+	sf::Texture texture("assets/stick_figure.png", false, sf::IntRect({10, 10}, {64, 64}));
+	sf::Sprite sprite(texture);
+	sprite.setColor(sf::Color::Green);
+
+	sf::RectangleShape shape(sf::Vector2f(100.f, 50.f));
+	shape.setFillColor(sf::Color::Green);
 
 	while (window.isOpen())
 	{
@@ -14,8 +19,9 @@ int main()
 				window.close();
 		}
 
-		/*window.clear();
+		window.clear();
 		window.draw(shape);
-		window.display();*/
+		window.draw(sprite);
+		window.display();
 	}
 }
