@@ -1,5 +1,6 @@
 /CMakeLists.txt
 /CMakePresets.json
+/.gitignore
 
 .vs/
 out/
